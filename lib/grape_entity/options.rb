@@ -28,9 +28,9 @@ module Grape
           self
         else
           merged = if new_opts.instance_of? Options
-                     @opts_hash.merge(new_opts.opts_hash)
+                     @opts_hash.merge!(new_opts.opts_hash)
                    else
-                     @opts_hash.merge(new_opts)
+                     @opts_hash.merge!(new_opts)
                    end
           Options.new(merged)
         end
